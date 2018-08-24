@@ -13,6 +13,13 @@ class NovaSslCard extends Card
      */
     public $width = '1/3';
 
+    public function __construct(string $domain = null)
+    {
+        $domain = $domain ?: request()->getHost();
+
+        $this->withMeta(compact('domain'));
+    }
+
     /**
      * Get the component name for the element.
      *

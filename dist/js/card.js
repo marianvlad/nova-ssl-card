@@ -249,12 +249,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['card'],
 
+    data: function data() {
+        return {
+            data: [],
+            loading: false,
+            error: null
+        };
+    },
     mounted: function mounted() {
-        //
+        var _this = this;
+
+        this.loading = true;
+
+        Nova.request().get('/nova-vendor/nova-ssl-card/details', {
+            params: {
+                domain: this.card.domain
+            }
+        }).then(function (response) {
+            _this.data = response.data;
+            _this.loading = false;
+        }).catch(function (_ref) {
+            var response = _ref.response;
+
+            _this.error = response.data.error;
+            _this.loading = false;
+        });
     }
 });
 
@@ -267,14 +300,31 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "card",
-    { staticClass: "flex flex-col items-center justify-center" },
+    "div",
+    { staticClass: "card relative px-4 py-4 relative card-panel" },
     [
-      _c("div", { staticClass: "px-3 py-3" }, [
-        _c("h1", { staticClass: "text-center text-3xl text-80 font-light" }, [
-          _vm._v("Nova Ssl Card")
-        ])
-      ])
+      _c("div", [
+        _c("h3", { staticClass: "mb-4" }, [_vm._v(_vm._s(_vm.card.domain))])
+      ]),
+      _vm._v(" "),
+      !_vm.loading && !_vm.error
+        ? _c("ul", { staticClass: "list-reset" }, [
+            _c("li", [
+              _c("strong", [_vm._v("Issuer: ")]),
+              _vm._v(" " + _vm._s(_vm.data.issuer))
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("strong", [_vm._v("Valid: ")]),
+              _vm._v(" " + _vm._s(_vm.data.is_valid ? "Yes" : "No"))
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("strong", [_vm._v("Expiration: ")]),
+              _vm._v(" " + _vm._s(_vm.data.expiration_date))
+            ])
+          ])
+        : _c("div", [_vm._v("\n    \t\t" + _vm._s(_vm.error) + "\n    \t")])
     ]
   )
 }
