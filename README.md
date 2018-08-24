@@ -3,9 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marianvlad/nova-ssl-card.svg?style=flat-square)](https://packagist.org/packages/marianvlad/nova-ssl-card)
 [![Total Downloads](https://img.shields.io/packagist/dt/marianvlad/nova-ssl-card.svg?style=flat-square)](https://packagist.org/packages/marianvlad/nova-ssl-card)
 
-Get some insight on your Algolia indexing with this easy to use Nova card.
-
-![nova-ssl-card](https://user-images.githubusercontent.com/2951704/44540973-dfbbbd80-a708-11e8-8387-057aa40fcbf0.png)
+Get details about ssl certificates inside a Nova card.
 
 ## Installation
 
