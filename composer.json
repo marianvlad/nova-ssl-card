@@ -1,0 +1,39 @@
+{
+    "name": "marianvlad/nova-ssl-card",
+    "description": "A Laravel Nova card for SSL certificates.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "ssl"
+    ],
+    "homepage": "https://github.com/marianvlad/nova-ssl-card",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marian Gabriel",
+            "email": "vladmariang@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "spatie/ssl-certificate": "^1.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "Marianvlad\\NovaSslCard\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marianvlad\\NovaSslCard\\CardServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
