@@ -3,7 +3,9 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marianvlad/nova-ssl-card.svg?style=flat-square)](https://packagist.org/packages/marianvlad/nova-ssl-card)
 [![Total Downloads](https://img.shields.io/packagist/dt/marianvlad/nova-ssl-card.svg?style=flat-square)](https://packagist.org/packages/marianvlad/nova-ssl-card)
 
-Get details about ssl certificates inside a Nova card.
+Get details about SSQL certificates inside a Nova card.
+
+![nova-ssl-card](https://i.imgur.com/KOCjCj3.png)
 
 ## Installation
 
@@ -31,7 +33,7 @@ public function cards()
  
 ## Usage
 
-By default the card will show SSL certificate details about current domain
+By default the card will show certificate details for the current domain
 where you have installed Nova but you can configure for any domain name
 
 ```php
@@ -44,14 +46,10 @@ public function cards()
     return [
         new \Marianvlad\NovaSslCard\NovaSslCard, // current domain
         // or
-        new \Marianvlad\NovaSslCard\NovaSslCard('domain.tld'),
+        new \Marianvlad\NovaSslCard\NovaSslCard('laravel.com'),
     ];
 }
 ```
-
-### Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## License
 
