@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/marianvlad/nova-ssl-card.svg?style=flat-square)](https://packagist.org/packages/marianvlad/nova-ssl-card)
 [![Total Downloads](https://img.shields.io/packagist/dt/marianvlad/nova-ssl-card.svg?style=flat-square)](https://packagist.org/packages/marianvlad/nova-ssl-card)
 
-Get details about SSQL certificates inside a Nova card.
+Get details about SSL certificate inside a Nova card.
 
 ![nova-ssl-card](https://i.imgur.com/KOCjCj3.png)
 
