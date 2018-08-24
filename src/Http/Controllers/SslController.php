@@ -17,6 +17,7 @@ class SslController
 				'issuer' => $certificate->getIssuer(),
 				'is_valid' => $certificate->isValid(),
 				'expiration_date' => $certificate->expirationDate()->diffForHumans(),
+				'expiration_date_in_days' => $certificate->expirationDate()->diffInDays()
 			]);
 
 		} catch (Exception $e) {
