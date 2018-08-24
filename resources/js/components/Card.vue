@@ -1,12 +1,11 @@
 <template>
 	<div class="card relative px-4 py-4 relative card-panel">
-		<div>
-    		<h3 class="mb-4">{{ card.domain }}</h3>
-    	</div>
+    	<h3 class="mb-4" :class="{ 'valid-certificate' : data.is_valid, 'invalid-certificate' : ! data.is_valid }">
+    		{{ card.domain }} - {{ data.is_valid ? 'Valid SSL' : 'Invalid SSL' }}
+    	</h3>
 
     	<ul class="list-reset" v-if="! loading && ! error">
       		<li><strong>Issuer: </strong> {{ data.issuer }}</li>
-      		<li><strong>Valid: </strong> {{ data.is_valid ? 'Yes' : 'No' }}</li>
       		<li><strong>Expiration: </strong> {{ data.expiration_date }}</li>
     	</ul>
 
