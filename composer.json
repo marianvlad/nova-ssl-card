@@ -17,6 +17,7 @@
     ],
     "require": {
         "php": ">=7.1.0",
+        "laravel/nova": "*",
         "spatie/ssl-certificate": "^1.12"
     },
     "autoload": {
